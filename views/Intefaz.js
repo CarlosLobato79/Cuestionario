@@ -29,12 +29,13 @@ export class Intefaz {
     }
 
     testTerminado(puntaje, cantPreguntas){
-        Swal.fire({
-            title: 'Test Terminado',
-            text: `Puntaje Total ${puntaje} de ${cantPreguntas} `,
-            icon: 'info',
-            confirmButtonText: 'Volver Intentarlo'
-        })
+            Swal.fire({
+                title: 'Test Terminado',
+                text: `Puntaje Total ${puntaje} de ${cantPreguntas} `,
+                icon: 'info',
+                confirmButtonText: 'Volver Intentarlo'
+            })
+        return true;
     }
 
 }

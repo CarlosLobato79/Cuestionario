@@ -6,28 +6,28 @@ import { Intefaz} from "./views/Intefaz.js";
 
 
 
-function renderizar(test,pregunta){
+function renderizar(quiz,pregunta){
 
-    if(!test.termine()){
-        pregunta.testTerminado(test.puntaje,test.cantidadPregunta)
-        test.reiniciarTest()
-        renderizar(test,pregunta)
+    if(!quiz.termine()){
+        if(pregunta.testTerminado(quiz.puntaje,quiz.cantidadPregunta)){
+            quiz.reiniciarTest()
+            renderizar(quiz,pregunta)
+        }
 
     } else {
-        pregunta.mostrarPreguntas(test.obtenerPregunta().pregunta)
-        pregunta.avanceTest(test.indiceDePregunta,test.cantidadPregunta)
-        pregunta.mostrarOpciones(test.obtenerPregunta().opciones, (current)=>{
-        test.comprobarRespuesta(current)
-        renderizar(test,pregunta)
+        pregunta.mostrarPreguntas(quiz.obtenerPregunta().pregunta);
+        pregunta.avanceTest(quiz.indiceDePregunta,quiz.cantidadPregunta);
+        pregunta.mostrarOpciones(quiz.obtenerPregunta().opciones, (current)=>{
+        quiz.comprobarRespuesta(current);
+        renderizar(quiz,pregunta);
         });
     }
 }
 
 function main(){
-    const quiz = new Prueba(objectoPreguntas)
-    const pregunta = new Intefaz()
-    renderizar(quiz,pregunta);
+    const quizInfo = new Prueba(objectoPreguntas)
+    const pregunta = new Intefaz();
+    renderizar(quizInfo,pregunta);
 }
-
 
 main();
