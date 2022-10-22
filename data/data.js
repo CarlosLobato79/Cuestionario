@@ -8,6 +8,9 @@ export const  data = [
             'Pollo',
             'Carne',
             'Pizza',
+            'Brocoli',
+            'salsa',
+            'hamburguesa'
         ],
         'answer': 2
     },
