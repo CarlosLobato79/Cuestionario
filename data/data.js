@@ -3,35 +3,58 @@
 //Preguntas y Respuesta
 export const  data = [
     {
-        'question': '1.Comida Preferida?',
+        'question': 'Que es un arma de fuego?',
         'choice': [
-            'Pollo',
-            'Carne',
-            'Pizza',
-            'Brocoli',
-            'salsa',
-            'hamburguesa'
+            'Es aquella que mediante el uso de cartuchos de percusion anular impulsa proyectiles atraves de un cañon de animalisa o rayada',
+            'Convencionales y solidas de perdigones o postas',
+            'explosivas flechetes incendiarias y perforantes'
         ],
-        'answer': 2
+        'answer': 0
     },
     {
-        'question': '2.Bebida Preferida?',
+        'question': 'Armas permitidas por la ley',
         'choice': [
-            'Gaseosa',
-            'Licuiado',
-            'Jugo',
-            'Batido'
+            'De guerra',
+            'Fusil carabina pistolas revolveres y escopetas',
+            'de fabricacion artesanal y de mayor calibre'
         ],
-        'answer': 2
+        'answer': 1
     },
     {
-        'question': '3.Lugar Favorito?',
+        'question': 'Armas prohibidas por la ley',
         'choice': [
-            'Escuela',
-            'Casa',
-            'Biblioteca',
-            'Iglesia'
+            'Fusil carabina pistolas revolveres y escopetas',
+            'Armas blancas',
+            'de guerra de fabricacion artesanal y de mayor calibre'
         ],
         'answer': 2
-    }
+     },
+    // {
+    //     'question': '',
+    //     'choice': [
+    //         '',
+    //         '',
+    //         '',
+    //     ],
+    //     'answer': 0
+    // },
+    // {
+    //     'question': '',
+    //     'choice': [
+    //         '',
+    //         '',
+    //         '',
+    //     ],
+    //     'answer': 0
+    // },
+    // {
+    //     'question': '',
+    //     'choice': [
+    //         '',
+    //         '',
+    //         '',
+    //     ],
+    //     'answer': 0
+    // },
+
 ];

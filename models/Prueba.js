@@ -8,44 +8,48 @@ export class Prueba{
     puntaje = 0;
     cantidadPregunta
     constructor(objetoPreguntas) {
-        this.preguntas = objetoPreguntas;
+        this.objetoPreguntas = objetoPreguntas;
         this.cantidadPregunta = objetoPreguntas.length
     }
 
-    termine(){
-        return this.indiceDePregunta !==  this.preguntas.length;
+    esLaUltima(){
+        return this.indiceDePregunta !==  this.objetoPreguntas.length;
     }
 
     obtenerPregunta(){
-        return this.preguntas[this.indiceDePregunta]
+        return this.objetoPreguntas[this.indiceDePregunta]
     }
 
-    comprobarRespuesta(value){
-        console.log("Comprobando respuesta")
-        console.log(this.preguntas[this.indiceDePregunta].getRespuesta() + "\t value: " + value)
-        if(this.preguntas[this.indiceDePregunta].getRespuesta() === Number(value)){
-            this.puntaje++;
-            const respuestas = this.preguntas[this.indiceDePregunta].getOpciones();
-            Swal.fire({
-                title: 'Respuesta Correcta!',
-                text: `Respuesta: ${respuestas[this.preguntas[this.indiceDePregunta].getRespuesta()]}`,
-                icon: 'success',
-                confirmButtonText: 'Siguiente'
-            })
+    comprobarRespuesta(value,callback){
+        const respuestaCorrecta = this.objetoPreguntas[this.indiceDePregunta].getRespuesta();
+        const respuestas = this.objetoPreguntas[this.indiceDePregunta].getOpciones();
 
-            console.log(`Este es tu puntaje: ${this.puntaje}`)
+        function mensaje(indiceCorrecta){
+            if(indiceCorrecta === Number(value)){
+                return ['Respuesta Correcta',`Respuesta: ${respuestas[respuestaCorrecta]}`,'success',true]
+            }else{
+                return ['Respuesta Incorrecta',`Respuesta:  ${respuestas[respuestaCorrecta]}`,'error',false]
+            }
+        }
 
-        }else{
-            const respuestas = this.preguntas[this.indiceDePregunta].getOpciones();
-            Swal.fire({
-                title: 'Respuesta Incorrecta!',
-                text: `Respuesta: ${respuestas[this.preguntas[this.indiceDePregunta].getRespuesta()]}`,
-                icon: 'error',
-                confirmButtonText: 'Siguiente'
-            })
+        const [Titulo,texto,icono,pass] = mensaje(respuestaCorrecta);
+        Swal.fire({
+            title: Titulo,
+            text: texto,
+            icon: icono,
+            confirmButtonText: 'Siguiente'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                callback(true)
+            }
+        })
+
+        if(pass){
+            this.puntaje++
         }
         this.indiceDePregunta++;
     }
+
 
     reiniciarTest(){
         this.indiceDePregunta = 0

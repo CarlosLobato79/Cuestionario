@@ -1,17 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @font-face {
-  font-family: Mazzard-Graphic;
+  font-family: Mazzard-Graphic-black;
   src: url(../fonts/Mazzard-GraphicUX/MazzardH-Black.otf);
   font-style: normal;
   font-weight: normal;
 }
 @font-face {
-  font-family: Mazzard-Graphic;
-  src: url(../fonts/Mazzard-GraphicUX/MazzardH-Black.otf);
-  font-style: normal;
-  font-weight: bold;
-}
-@font-face {
-  font-family: Mazzard-Graphic;
+  font-family: Mazzard-Graphic-Italic;
   src: url(../fonts/Mazzard-GraphicUX/MazzardH-BlackItalic.otf);
   font-style: Italic;
   font-weight: normal;
@@ -20,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Mazzard-Graphic", sans-serif;
+  font-family: "Mazzard-Graphic-black", sans-serif;
 }
 
 body {
@@ -70,6 +65,7 @@ body {
   font-size: 1.5rem;
   background: rgb(102, 189, 217);
   color: white;
+  font-family: "Cantarell", sans-serif;
   font-weight: bold;
   border: 0 solid white;
   border-radius: 5px;
