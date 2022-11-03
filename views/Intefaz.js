@@ -56,8 +56,10 @@ export class Intefaz {
                 callback(true)
             }else{
                 callback(false)
+
             }
         })
+
     }
 
 }
